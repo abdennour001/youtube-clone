@@ -1,3 +1,7 @@
+# youtube-clone
+
+Youtube clone project using ReactJS 🚀, #100DaysOfCode
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
