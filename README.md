@@ -2,6 +2,28 @@
 
 Youtube clone project using ReactJS 🚀, #100DaysOfCode
 
+### Technologies used
+
+-   ✅ REACT JS for front-end
+-   ✅ Context API (instead of redux)
+-   ✅ REACT Router 🧭
+-   ✅ Firebase (user authentication 🔑 + database ℹ️)
+-   ✅ Firebase Hosting to deploy 🚀
+
+### 👇 What are we going to do? 👇
+
+-   [x] ⌨️ Set up React app using the create-react-app command
+-   [x] 🚀 Set up Firebase
+-   [ ] 🔄 Set up Rseact Router
+-   [ ] 🧭 Build the navbar (header)
+-   [ ] 🏗 Build the sidebar (menu)
+-   [ ] 🏗 Build the video component
+-   [ ] 🏗 Build Recommended Section
+-   [ ] 🦶 Add a footer to our youtube
+-   [ ] 🚀 Deploy application on Firebase
+
+# How it works
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
