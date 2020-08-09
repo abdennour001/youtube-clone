@@ -1,0 +1,8 @@
+.l-right_nav {
+    display: flex;
+    align-items: center;
+}
+
+.l-right_nav__icon {
+    color: var(--icon-color-primary);
+}
