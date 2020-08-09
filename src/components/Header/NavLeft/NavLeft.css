@@ -1,8 +1,15 @@
 .l-left_nav {
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .l-left_nav__icon {
     color: var(--icon-color-primary);
+}
+
+.l-left_nav__logo {
+    height: 50px;
+    object-fit: contain;
+    margin-left: 5px;
 }
