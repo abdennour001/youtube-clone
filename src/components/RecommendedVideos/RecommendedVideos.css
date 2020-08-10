@@ -1,0 +1,17 @@
+.l-recommended_videos {
+    background: #f9f9f9;
+    flex: 1;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-recommended_videos__title {
+    line-height: 2.4rem;
+    margin-bottom: 30px;
+}
+
+.l-recommended_videos__l-videos {
+    display: flex;
+    flex-wrap: wrap;
+}
