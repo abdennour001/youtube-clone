@@ -1,0 +1,19 @@
+.l-app {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+    .l-app {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.l-app__sidebar {
+    display: flex;
+}
+
+.l-app__recommended_videos {
+    display: flex;
+}
