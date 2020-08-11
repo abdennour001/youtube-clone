@@ -4,18 +4,18 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import RecommendedVideos from "./components/RecommendedVideos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchPage from "./components/SearchPage"
+import SearchPage from "./components/SearchPage";
 
 function App() {
     return (
-        <div className="App">
-            <Header />
-            <div className="l-app">
-                <div className="l-app__sidebar">
-                    <Sidebar />
-                </div>
-                <div className="l-app__content">
-                    <Router>
+        <Router>
+            <div className="App">
+                <Header />
+                <div className="l-app">
+                    <div className="l-app__sidebar">
+                        <Sidebar />
+                    </div>
+                    <div className="l-app__content">
                         <Switch>
                             <Route exact path="/">
                                 <RecommendedVideos />
@@ -24,10 +24,10 @@ function App() {
                                 <SearchPage />
                             </Route>
                         </Switch>
-                    </Router>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Router>
     );
 }
 
