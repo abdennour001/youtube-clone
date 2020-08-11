@@ -17,7 +17,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: white;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     border-radius: 4px;
     padding: 2px 4px;
     position: absolute;
@@ -45,7 +45,7 @@
 
 .l-video_row_card__headline {
     font-weight: 500;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--icon-color-primary);
 }
 
@@ -58,7 +58,7 @@
 
 .l-video_row_card__description {
     margin-top: 11px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--icon-color-primary);
     font-weight: 500;
 }

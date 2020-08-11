@@ -17,11 +17,11 @@ function App() {
                     </div>
                     <div className="l-app__content">
                         <Switch>
-                            <Route exact path="/">
-                                <RecommendedVideos />
-                            </Route>
                             <Route path="/search">
                                 <SearchPage />
+                            </Route>
+                            <Route exact path="/">
+                                <RecommendedVideos />
                             </Route>
                         </Switch>
                     </div>

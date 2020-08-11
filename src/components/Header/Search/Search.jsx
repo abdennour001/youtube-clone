@@ -12,7 +12,7 @@ function Search() {
     let queryUrl = useQuery();
 
     useEffect(() => {
-        setQuery(queryUrl.get("query"));
+        setQuery(queryUrl.get("query") ? queryUrl.get("query") : "");
     }, []);
 
     return (
@@ -24,7 +24,7 @@ function Search() {
                 onChange={e => setQuery(e.target.value)}
             />
             <Link
-                to={`/search?query=${query.replace(" ", "+")}`}
+                to={`/search?query=${ query ? query.replace(" ", "+") : ""}`}
                 style={{ display: "flex" }}
             >
                 <SearchIcon className="l-search__icon" />
