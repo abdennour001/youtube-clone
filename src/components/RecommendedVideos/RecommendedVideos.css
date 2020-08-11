@@ -1,7 +1,5 @@
 .l-recommended_videos {
-    background: #f9f9f9;
     flex: 1;
-    padding: 40px 30px;
     display: flex;
     flex-direction: column;
 }

@@ -15,4 +15,6 @@
 
 .l-app__content {
     display: flex;
+    background: #f9f9f9;
+    padding: 40px 30px;
 }

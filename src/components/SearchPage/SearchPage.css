@@ -1,0 +1,30 @@
+.l-search_page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-search_page__l-filter {
+    display: flex;
+    align-items: center;
+    color: var(--icon-color-primary);
+}
+
+.l-search_page__icon {
+    height: 26px !important;
+    width: 26px !important;
+}
+
+.l-search_page__l-filter > h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.l-search_page > hr {
+    margin: 10px 0;
+    background-color: lightgray;
+    height: 1px;
+    border: 0;
+}
