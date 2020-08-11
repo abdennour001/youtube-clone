@@ -4,6 +4,7 @@
     align-items: flex-start;
     margin-bottom: 30px;
     margin-right: 10px;
+    width: 300px;
 }
 
 .video_card__thumbnail {
@@ -46,6 +47,12 @@
 .video_card__text > h4 {
     font-size: 14px;
     margin-bottom: 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .video_card__text > p {
