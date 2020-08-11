@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import RecommendedVideos from "./components/RecommendedVideos";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
     return (
@@ -12,8 +13,14 @@ function App() {
                 <div className="l-app__sidebar">
                     <Sidebar />
                 </div>
-                <div className="l-app__recommended_videos">
-                    <RecommendedVideos />
+                <div className="l-app__content">
+                    <Router>
+                        <Switch>
+                            <Route exact path="/">
+                                <RecommendedVideos />
+                            </Route>
+                        </Switch>
+                    </Router>
                 </div>
             </div>
         </div>
