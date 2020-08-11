@@ -1,12 +1,12 @@
 .l-search_page {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 65%;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
     .l-search_page {
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -32,6 +32,7 @@
 
 .l-search_page > hr {
     margin: 10px 0;
+    margin-bottom: 15px;
     background-color: lightgray;
     height: 1px;
     border: 0;

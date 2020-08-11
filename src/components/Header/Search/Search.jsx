@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Search.scss";
 import SearchIcon from "@material-ui/icons/Search";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 function Search() {
     const [query, setQuery] = useState("");
+    let queryUrl = useQuery();
+
+    useEffect(() => {
+        setQuery(queryUrl.get("query"));
+    }, []);
 
     return (
         <div className="l-search">
@@ -14,7 +23,10 @@ function Search() {
                 value={query}
                 onChange={e => setQuery(e.target.value)}
             />
-            <Link to={`/search/${query}`} style={{ display: "flex" }}>
+            <Link
+                to={`/search?query=${query.replace(" ", "+")}`}
+                style={{ display: "flex" }}
+            >
                 <SearchIcon className="l-search__icon" />
             </Link>
         </div>
