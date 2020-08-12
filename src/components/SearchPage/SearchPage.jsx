@@ -63,7 +63,7 @@ function SearchPage() {
                 });
             })
             .catch(error => {
-                console.error("Error:", error);
+                console.error("Error:", error.message);
             });
     }, [query.get("query")]);
 
@@ -77,15 +77,12 @@ function SearchPage() {
             </div>
 
             <hr />
-            {results.length === 0 && (
-                <p>
-                    <strong>No results found.</strong>
-                </p>
-            )}
+            {results.length === 0 && <p>No results found. </p>}
             {results.length !== 0 && (
                 <div className="l-search_page__results">
                     {results.map(video => (
                         <VideoRowCard
+                            className="l-search_page__video"
                             key={video.id}
                             thumbnail={video.thumbnail}
                             channel={video.channel}
