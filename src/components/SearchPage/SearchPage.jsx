@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "./SearchPage.css";
 import TuneOutLined from "@material-ui/icons/TuneOutlined";
 import VideoRowCard from "./VideoRowCard";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -25,7 +26,7 @@ function SearchPage() {
             "query"
         )}&key=${
             process.env.REACT_APP_YOUTUBE_API_KEY
-        }&type=video&maxResults=${20}`;
+        }&type=video&maxResults=${1}`;
 
         let videos = [];
 
@@ -68,33 +69,44 @@ function SearchPage() {
     }, [query.get("query")]);
 
     return (
-        <div className="l-search_page">
-            <LoadingBar ref={ref} height={2} color="red" />
+        <>
+            <HelmetProvider>
+                <Helmet title={`${query.get("query")} - Youtube`} />
+            </HelmetProvider>
 
-            <div className="l-search_page__l-filter">
-                <TuneOutLined className="l-search_page__icon" />
-                <h3>filter</h3>
-            </div>
+            <div className="l-search_page">
+                <LoadingBar ref={ref} height={2} color="red" />
 
-            <hr />
-            {results.length === 0 && <p>No results found. </p>}
-            {results.length !== 0 && (
-                <div className="l-search_page__results">
-                    {results.map(video => (
-                        <VideoRowCard
-                            className="l-search_page__video"
-                            key={video.id}
-                            thumbnail={video.thumbnail}
-                            channel={video.channel}
-                            channelImage="https://yt3.ggpht.com/a/AATXAJyb_Q6mAuRxbMoRwN8QojxHKmKyGMibjk7rF1gI2ag=s176-c-k-c0xffffffff-no-rj-mo"
-                            title={video.title}
-                            views={video.views}
-                            timestamp={video.timestamp}
-                            duration={video.duration}
-                            description={video.description}
-                        />
-                    ))}
-                    {/* <VideoRowCard
+                <div className="l-search_page__l-filter">
+                    <TuneOutLined className="l-search_page__icon" />
+                    <h3>filter</h3>
+                </div>
+
+                <hr />
+                {results.length === 0 && <p>No results found. </p>}
+                {results.length !== 0 && (
+                    <div className="l-search_page__results">
+                        {results.map(video => (
+                            <Link
+                                key={video.id}
+                                className="l-search_page__video"
+                                to="/"
+                                style={{ textDecoration: "none" }}
+                            >
+                                <VideoRowCard
+                                    key={`${video.id}-video`}
+                                    thumbnail={video.thumbnail}
+                                    channel={video.channel}
+                                    channelImage="https://yt3.ggpht.com/a/AATXAJyb_Q6mAuRxbMoRwN8QojxHKmKyGMibjk7rF1gI2ag=s176-c-k-c0xffffffff-no-rj-mo"
+                                    title={video.title}
+                                    views={video.views}
+                                    timestamp={video.timestamp}
+                                    duration={video.duration}
+                                    description={video.description}
+                                />
+                            </Link>
+                        ))}
+                        {/* <VideoRowCard
                         thumbnail="https://i.ytimg.com/vi/ciGTML-jukM/hq720.jpg?sqp=-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDCpDRbv0JS06H5UO4hnFGYnm2viw"
                         channel="Shantanu Kumar"
                         channelImage="https://yt3.ggpht.com/a/AATXAJyb_Q6mAuRxbMoRwN8QojxHKmKyGMibjk7rF1gI2ag=s176-c-k-c0xffffffff-no-rj-mo"
@@ -144,9 +156,10 @@ function SearchPage() {
                         duration="3:56"
                         description="How to learn coding ? coding kaise sikhe well dosto is video mein coding ke bare mein apna experience share karne wala hu ki"
                     /> */}
-                </div>
-            )}
-        </div>
+                    </div>
+                )}
+            </div>
+        </>
     );
 }
 

@@ -1,6 +1,7 @@
 .l-app {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+    /* display: grid;
+    grid-template-columns: 1fr 5fr; */
+    display: flex;
 }
 
 @media only screen and (max-width: 700px) {
@@ -11,10 +12,12 @@
 
 .l-app__sidebar {
     display: flex;
+    flex: 0.17;
 }
 
 .l-app__content {
     display: flex;
     background: #f9f9f9;
     padding: 40px 30px;
+    flex: 1;
 }

@@ -1,7 +1,7 @@
 .l-video_row_card {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    color: black;
 }
 
 .l-video_row_card__thumbnail > img {
@@ -45,8 +45,8 @@
 
 .l-video_row_card__headline {
     font-weight: 500;
-    font-size: 14px;
-    color: var(--icon-color-primary);
+    font-size: 13px;
+    color: #606060;
 }
 
 .l-video_row_card__headline > span {
@@ -58,7 +58,7 @@
 
 .l-video_row_card__description {
     margin-top: 11px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--icon-color-primary);
     font-weight: 500;
     text-overflow: ellipsis;
