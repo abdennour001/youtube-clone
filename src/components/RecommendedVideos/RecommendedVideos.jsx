@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./RecommendedVideos.css";
 import VideoCard from "./VideoCard";
+import LoadingBar from "react-top-loading-bar";
 
 function RecommendedVideos() {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        ref.current.staticStart();
+        ref.current.complete();
+    }, []);
+
     return (
         <div className="l-recommended_videos">
+            <LoadingBar ref={ref} height={2} color="red" />
             <h2 className="l-recommended_videos__title">Recommended</h2>
             <div className="l-recommended_videos__l-videos">
                 <VideoCard

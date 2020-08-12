@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./SearchPage.css";
 import TuneOutLined from "@material-ui/icons/TuneOutlined";
 import VideoRowCard from "./VideoRowCard";
 import { useLocation } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -15,8 +16,10 @@ function getVideoApiUrl(videoId) {
 function SearchPage() {
     let query = useQuery();
     let [results, setResults] = useState([]);
+    const ref = useRef(null);
 
     useEffect(() => {
+        ref.current.staticStart();
         // fetch result
         let URL_LIST = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query.get(
             "query"
@@ -52,6 +55,7 @@ function SearchPage() {
                                 videos.push(video);
                             });
                             setResults([...videos]);
+                            ref.current.complete();
                         })
                         .catch(error => {
                             console.error("Error:", error);
@@ -65,6 +69,8 @@ function SearchPage() {
 
     return (
         <div className="l-search_page">
+            <LoadingBar ref={ref} height={2} color="red" />
+
             <div className="l-search_page__l-filter">
                 <TuneOutLined className="l-search_page__icon" />
                 <h3>filter</h3>
