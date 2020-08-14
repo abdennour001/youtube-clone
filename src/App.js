@@ -5,14 +5,19 @@ import Sidebar from "./components/Sidebar";
 import RecommendedVideos from "./components/RecommendedVideos";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchPage from "./components/SearchPage";
+import { Provider, connect } from "react-redux";
 
-function App() {
+// Redux store
+import store from "./redux/store";
+
+function App({ isOpened }) {
+
     return (
         <Router>
             <div className="App">
                 <Header />
                 <div className="l-app">
-                    <div className="l-app__sidebar">
+                    <div className={`l-app__sidebar${isOpened ? "" : "-hidden"}`}>
                         <Sidebar />
                     </div>
                     <div className="l-app__content">
@@ -31,4 +36,4 @@ function App() {
     );
 }
 
-export default App;
+export default connect(state => ({ isOpened: state.menu.isOpened }))(App);

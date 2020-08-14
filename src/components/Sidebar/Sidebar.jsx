@@ -12,22 +12,25 @@ import OnDemandVideoIcon from "@material-ui/icons/OndemandVideo";
 import HistoryIcon from "@material-ui/icons/History";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 
+// Redux
+import { connect } from "react-redux";
+
 function Sidebar() {
     return (
         <div className="l-sidebar">
             <SidebarRow selected Icon={HomeIcon} title="Home" />
             <SidebarRow Icon={WhatShotIcon} title="Trending" />
             <SidebarRow Icon={SubscriptionsIcon} title="Subscription" />
-            <hr/>
+            <hr />
             <SidebarRow Icon={VideoLibraryIcon} title="Library" />
             <SidebarRow Icon={HistoryIcon} title="History" />
             <SidebarRow Icon={OnDemandVideoIcon} title="Your videos" />
             <SidebarRow Icon={WatchLaterIcon} title="Watch Later" />
             <SidebarRow Icon={ThumbUpAltOutlinedIcon} title="Liked videos" />
             <SidebarRow Icon={ExpandMoreOutlinedIcon} title="Show more" />
-            <hr/>
+            <hr />
         </div>
     );
 }
 
-export default Sidebar;
+export default connect(state => ({isOpened: state.menu.isOpened}))(Sidebar);

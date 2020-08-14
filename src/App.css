@@ -15,6 +15,16 @@
     flex: 0.17;
 }
 
+.l-app__sidebar-hidden {
+    /* flex: 0; */
+}
+
+@media only screen and (max-width: 700px) {
+    .l-app__sidebar-hidden {
+        display: none;
+    }
+}
+
 .l-app__content {
     display: flex;
     background: #f9f9f9;
