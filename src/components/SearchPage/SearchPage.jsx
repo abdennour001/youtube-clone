@@ -26,7 +26,7 @@ function SearchPage() {
             "query"
         )}&key=${
             process.env.REACT_APP_YOUTUBE_API_KEY
-        }&type=video&maxResults=${1}`;
+        }&type=video&maxResults=${20}`;
 
         let videos = [];
 
