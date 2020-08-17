@@ -18,13 +18,13 @@ https://clone-75ce5.web.app/
 
 -   [x] ⌨️ Set up React app using the create-react-app command
 -   [x] 🚀 Set up Firebase
--   [ ] 🔄 Set up Rseact Router
--   [ ] 🧭 Build the navbar (header)
--   [ ] 🏗 Build the sidebar (menu)
--   [ ] 🏗 Build the video component
--   [ ] 🏗 Build Recommended Section
--   [ ] 🦶 Add a footer to our youtube
--   [ ] 🚀 Deploy application on Firebase
+-   [x] 🔄 Set up Rseact Router
+-   [x] 🧭 Build the navbar (header)
+-   [x] 🏗 Build the sidebar (menu)
+-   [x] 🏗 Build the video component
+-   [x] 🏗 Build Recommended Section
+-   [x] 🦶 Add a footer to our youtube
+-   [x] 🚀 Deploy application on Firebase
 
 # How it works
 
